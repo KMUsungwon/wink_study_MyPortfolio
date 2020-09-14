@@ -76,7 +76,7 @@ header .innerHeader div h1 {line-height: 150px; font-size: 55px; color: #333333;
 .content1 .sns .snsBox .icon1:hover img {transform: scale(1.2);}
 
 /*circle rotate animation*/
-.wrap_circle {position: absolute; top: 0; right: 0;}
+.wrap_circle {position: absolute; top: 13%; right: 0;}
 .wrap_circle:hover span {
     background: #000000;
     border: none;
@@ -108,3 +108,16 @@ header .innerHeader div h1 {line-height: 150px; font-size: 55px; color: #333333;
 
 .circle_content {position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); text-align: center; width: 70%;}
 .circle_content h5 {font-weight: 200;}
+
+/*footer*/
+footer {
+    margin-top: 100px;
+    color: #999999;
+    background: #1b1b1b;
+    padding: 10px 30px 30px;
+}
+footer ul {
+    display: flex;
+    justify-content: space-between;
+}
+footer ul li span {font-weight: bold; color: #ffffff; margin-right: 5px;}
