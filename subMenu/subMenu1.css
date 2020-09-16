@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Nanum+Myeongjo&display=swap&subset=korean');
+body {margin: 0; font-family: 'PT Sans Narrow', sans-serif}
+a {text-decoration: none; color: #333333;}
+.my_logo {list-style: none; display: flex; padding:0; margin: 0; height: 100vh;}
+.my_logo li {
+    border-right: 5px solid #000000;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    transition: 0.5s;
+}
+.my_logo li:last-child {border-right: none;}
+.my_logo li:nth-child(1) {background: url("assets/me1.jpeg")no-repeat center center;background-size: cover;}
+.my_logo li:nth-child(2) {background: url("assets/me2.jpeg") no-repeat center center; background-size: cover;}
+.my_logo li:nth-child(3) {background: url("assets/me3.jpeg"); background-size: cover;}
+
+.about {
+    font-size: 40px;
+    color: #ffffff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    letter-spacing: 0.3em;
+}
+
+/*hover design*/
+.my_logo:hover li {flex: 1}
+.my_logo li:hover {flex: 3; filter: grayscale(0.7);}
+.my_logo li:hover .about {display: none;}
+
+.content {
+    text-align: center;
+    position: absolute;
+    background: #000000;
+    color: #ffffff;
+    width: 100%;
+    height: 200px;
+    bottom: -200px;
+    transition: 0.5s;
+}
+.content h2 {font-size: 30px;}
+.content span {font-weight: bold; font-size: 18px;}
+.my_logo li:hover .content{bottom: 0; transition-delay: 0.5s;}
+
+
+/*home button*/
+.homeButton{position: absolute; left: 20px; top: 20px;}
+.fas {font-size: 50px;}
