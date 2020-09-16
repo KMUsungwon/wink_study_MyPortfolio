@@ -35,8 +35,8 @@ a {text-decoration: none; color: #333333;}
     background: #000000;
     color: #ffffff;
     width: 100%;
-    height: 200px;
-    bottom: -200px;
+    height: 250px;
+    bottom: -250px;
     transition: 0.5s;
 }
 .content h2 {font-size: 30px;}
@@ -59,4 +59,4 @@ a {text-decoration: none; color: #333333;}
 .menu_bar a:last-child:before {
     content: '';
 }
-.menu_bar a h3 {color: #ffffff;}
+.menu_bar a h3 {color: #eeeeee;}
