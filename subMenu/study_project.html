@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>STUDY AND PROJECT</title>
+    <link rel="stylesheet" href="subMenu2.css">
+</head>
+<body>
+    <div class="menu_bar">
+        <a href="https://kmusungwon.github.io/wink_study_MyPortfolio/"><h3>HOME</h3></a>
+        <a href="about.html"><h3>ABOUT</h3></a>
+        <a href="https://kmusungwon.github.io/wink_study_MyPortfolio/"><h3>TOTO</h3></a>
+    </div>
+    <div class="wrap">
+        <header>
+            <h1>MENU Concept</h1>
+            <p>학교에서 했던 스터디 혹은 프로젝트 활동에 대한 내용과 간단한 설명 <br>
+            또는 혼자서 공부한 내용에 대한 설명을 다루는 페이지.
+            </p>
+        </header>
+
+        <section class="study">
+            <h1>STUDY</h1>
+            <article>
+                <h3>WINK Flutter Study</h3>
+                <p>1. Dart 언어의 이해 및 Flutter 문법 공부<br>
+                    2. 도시 날씨 정보를 가져오는 OPEN API 사용하기<br>
+                    3. Firebase를 이용한 로그인 구현<br>
+                    4. Android Studio를 이용한 Flutter Widget Design
+                </p>
+                <div id="imageBox">
+                    <div style="opacity:1;background-image: url('./assets/signin.png')"></div>
+                    <div style="background-image: url('./assets/signup.png')"></div>
+                    <div style="background-image: url('./assets/weather.png')"></div>
+                    <div style="background-image: url('./assets/firebase.png')"></div>
+                </div>
+            </article>
+
+            <article>
+                <h3>Swift Programming</h3>
+                <p>
+                    1. Swift 언어 이해 및 문법 공부<br>
+                    2.
+                </p>
+            </article>
+        </section>
+        <section class="project">
+
+        </section>
+    </div>
+
+    <script>
+        let banner = document.querySelector("#imageBox");
+        let count = 0;
+
+        function showBanner(num) {
+            for(let i=0; i<banner.children.length; i++) {
+                if(i == num) {
+                    banner.children[i].style.visibility = 'visible';
+                    banner.children[i].style.opacity = 1;
+                }
+                else {
+                    banner.children[i].style.visibility = 'hidden';
+                    banner.children[i].style.opacity = 0;
+                }
+            }
+        }
+
+        setInterval(function () {
+            if(count == banner.children.length) {
+                count = 0;
+            }
+            showBanner(count);
+            count++;
+        },3000);
+    </script>
+</body>
+</html>
