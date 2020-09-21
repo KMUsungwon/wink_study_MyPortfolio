@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Nanum+Myeongjo&display=swap&subset=korean');
 body {margin: 0; font-family: 'PT Sans Narrow', sans-serif}
 a {text-decoration: none; color: #333333;}
-.my_logo {list-style: none; display: flex; padding:0; margin: 0; height: 100vh;}
+.my_logo {list-style: none; display: flex; padding:0; margin: 0; height: 100vh; flex-direction: row;}
 .my_logo li {
     border-right: 5px solid #000000;
     flex: 1;
     overflow: hidden;
     position: relative;
-    transition: 0.5s;
+    transition: 0.7s;
 }
 .my_logo li:last-child {border-right: none;}
 .my_logo li:nth-child(1) {background: url("assets/me1.jpeg")no-repeat center center;background-size: cover;}
@@ -60,3 +60,15 @@ a {text-decoration: none; color: #333333;}
     content: '';
 }
 .menu_bar a h3 {color: #eeeeee;}
+
+@media (max-width: 768px) {
+    .about {font-size: 30px;}
+    .my_logo {flex-direction: column;}
+    .my_logo li {
+        border-right: none;
+        border-bottom: 5px solid #000000;
+    }
+    .my_logo li:last-child{border-bottom: none;}
+    .content {height: 200px; bottom: -200px;}
+    .menu_bar h3 {font-size: 18px;}
+}
