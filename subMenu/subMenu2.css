@@ -3,7 +3,7 @@ body {margin: 0; background: #F6E3CE; font-family: 'PT Sans Narrow', sans-serif;
 a{text-decoration: none;}
 ul {list-style: none;}
 h1 {font-size: 40px;} h3{font-size: 25px;}
-.wrap{width: 1024px; margin: 0 auto;}
+.wrap{width: 100%; text-align: center;}
 
 .menu_bar{width:100%;background: #333333;padding: 5px; text-align: center; margin: 0 0 50px 0;}
 .menu_bar a{display: inline-block; margin-right: 30px; position: relative;}
@@ -23,9 +23,10 @@ h1 {font-size: 40px;} h3{font-size: 25px;}
 
 header {margin-bottom: 100px;}
 header p {color: #222222; font-size: 20px;}
+article {margin-bottom: 100px;}
 
 article p {font-size: 18px;}
-#imageBox {width: 100%; height: 500px; position: relative;}
+#imageBox, .swiftImg {width: 100%; height: 500px; position: relative;}
 #imageBox div{
     opacity: 0;
     width: 100%; height: 100%; position: absolute;
@@ -33,4 +34,25 @@ article p {font-size: 18px;}
     background-position: center center;
     background-size: contain;
     transition: 0.8s;
+}
+.swiftImg div {
+    opacity: 0;
+    width: 100%; height: 100%; position: absolute;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    transition: 0.8s;
+}
+.swiftImg div:nth-child(1) {background: url("./assets/swift1.png") no-repeat center center; background-size: contain; opacity: 1;}
+.swiftImg div:nth-child(2) {background: url("./assets/swift2.png") no-repeat center center; background-size: contain;}
+.swiftImg div:nth-child(3) {background: url("./assets/swift3.png") no-repeat  center center; background-size: contain;}
+
+@media (max-width: 768px) {
+    header {margin-bottom: 50px;}
+    h1 {font-size: 35px;} h3 {font-size: 20px;}
+    header p {font-size: 16px;}
+    article {margin-bottom: 50px;}
+    #imageBox {height: 300px;}
+    .swiftImg {height: 300px;}
+    .menu_bar{font-size: 18px;}
 }

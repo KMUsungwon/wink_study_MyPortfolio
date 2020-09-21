@@ -36,6 +36,20 @@
                 </div>
             </article>
 
+            <article>
+                <h3>Swift 공부</h3>
+                <p>
+                    1. Swift 언어 이해 및 문법 공부<br>
+                    2. Xcode 사용법 익히기<br>
+                    3. StoryBoard 기반 간단한 어플 만들기 - FlashLight App
+                </p>
+                <div class="swiftImg">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </article>
+
         </section>
         <section class="project">
             <h1>PROJECT</h1>
@@ -48,6 +62,9 @@
     <script>
         let banner = document.querySelector("#imageBox");
         let count = 0;
+
+        let swift = document.querySelector(".swiftImg");
+        let swiftCount = 0;
 
         function showBanner(num) {
             for(let i=0; i<banner.children.length; i++) {
@@ -69,6 +86,27 @@
             showBanner(count);
             count++;
         },3000);
+
+        function showSwiftBanner(num) {
+            for(let i=0; i<swift.children.length; i++) {
+                if(i == num) {
+                    swift.children[i].style.visibility = 'visible';
+                    swift.children[i].style.opacity = 1;
+                }
+                else {
+                    swift.children[i].style.visibility = 'hidden';
+                    swift.children[i].style.opacity = 0;
+                }
+            }
+        }
+
+        setInterval(function () {
+            if(swiftCount == swift.children.length) {
+                swiftCount = 0;
+            }
+            showSwiftBanner(swiftCount);
+            swiftCount++;
+        },2500);
     </script>
 </body>
 </html>
