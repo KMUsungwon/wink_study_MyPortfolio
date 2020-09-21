@@ -45,7 +45,7 @@ a {text-decoration: none; color: #333333;}
 
 
 /*home button*/
-.menu_bar{width:100%;background: #333333;padding: 5px; text-align: center;}
+.menu_bar{width:100%;background: #333333;padding: 5px; text-align: center; margin: 0; padding: 0;}
 .menu_bar a{display: inline-block; margin-right: 30px; position: relative;}
 .menu_bar a:last-child {margin-right: 0;}
 .menu_bar a:before {
