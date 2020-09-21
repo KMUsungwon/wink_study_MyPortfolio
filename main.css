@@ -4,7 +4,8 @@ a {text-decoration: none; color: #222222;}
 ul {list-style: none;}
 h1,h2,h3,h4,h5,h6 {font-size: 25px;}
 
-.container {width: 1024px; margin: 0 auto;}
+.wrap {width: 1024px; margin: 0 auto;}
+.container {width: 100%;}
 header {box-shadow: 0 0 30px rgba(0,0,0,0.4);}
 header .innerHeader {
     width: 100%;
@@ -59,21 +60,26 @@ header .innerHeader div h1 {line-height: 150px; font-size: 55px; color: #333333;
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: row;
     margin: 50px 0;
 }
 
 .content1 .sns .snsBox .icon1 {
     width: 300px;
     height: 300px;
-    background: crimson;
+    /*background: crimson;*/
     margin-right: 50px;
     overflow: hidden;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0,0,0,0.8);
+    transition: 0.5s;
 }
-.content1 .sns .snsBox img {width: 300px; height: 300px; transition: 0.8s;}
-.content1 .sns .snsBox .icon1:last-child{margin-right: 0;}
-.content1 .sns .snsBox .icon1:hover img {transform: scale(1.2);}
+.content1 .sns .snsBox .img1 {background: url("images/facebook.jpg") no-repeat center center;}
+.content1 .sns .snsBox .img2 {background: url("images/git.jpg") no-repeat center center;}
+.content1 .sns .snsBox .img3 {background: url("images/instagram.jpg") no-repeat center center;}
+.content1 .sns .snsBox a {display: block; margin-right: 30px;}
+.content1 .sns .snsBox a:last-child{margin-right: 0;}
+.content1 .sns .snsBox a:hover .icon1 {transform: scale(1.1);}
 
 /*circle rotate animation*/
 .wrap_circle {position: absolute; top: 13%; right: 0;}
@@ -113,11 +119,27 @@ header .innerHeader div h1 {line-height: 150px; font-size: 55px; color: #333333;
 footer {
     margin-top: 100px;
     color: #999999;
-    background: #1b1b1b;
-    padding: 10px 30px 30px;
 }
 footer ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: row;
 }
-footer ul li span {font-weight: bold; color: #ffffff; margin-right: 5px;}
+footer ul li {margin: 0 50px;}
+footer ul li span {font-weight: bold; color: #333333; margin-right: 5px;}
+
+@media(max-width: 768px) {
+    .wrap {width: 768px; margin: 0 auto}
+    .container {width: 100%; padding: 0 50px; box-sizing: border-box;}
+
+    .content1 {text-align: center;}
+    .content1 p {width: 100%; font-size: 25px;}
+
+    .content1 .sns .snsBox .icon1 {width: 150px; height: 150px;}
+
+    .wrap_circle {visibility: hidden;}
+
+    footer {margin-top: 50px;}
+    footer ul {flex-direction: column;}
+    footer ul li {margin: 10px 0; text-align: center;}
+}
