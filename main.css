@@ -77,9 +77,11 @@ header .innerHeader div h1 {line-height: 150px; font-size: 55px; color: #333333;
 .content1 .sns .snsBox .img1 {background: url("images/facebook.jpg") no-repeat center center;}
 .content1 .sns .snsBox .img2 {background: url("images/git.jpg") no-repeat center center;}
 .content1 .sns .snsBox .img3 {background: url("images/instagram.jpg") no-repeat center center;}
-.content1 .sns .snsBox a {display: block; margin-right: 30px;}
+.content1 .sns .snsBox a {margin-right: 30px;}
 .content1 .sns .snsBox a:last-child{margin-right: 0;}
 .content1 .sns .snsBox a:hover .icon1 {transform: scale(1.1);}
+
+.content1 .snsIcon {display: none;}
 
 /*circle rotate animation*/
 .wrap_circle {position: absolute; top: 13%; right: 0;}
@@ -142,4 +144,18 @@ footer ul li span {font-weight: bold; color: #333333; margin-right: 5px;}
     footer {margin-top: 50px;}
     footer ul {flex-direction: column;}
     footer ul li {margin: 10px 0; text-align: center;}
+}
+
+@media (max-width: 480px) {
+    .wrap {width: 480px; margin: 0 auto;}
+    .container {padding: 0 30px;}
+    .container header .innerHeader h1 {font-size: 35px;}
+    .container header .gnb {font-size: 14px;}
+    .content1 h1 {font-size: 30px;}
+    .content1 p {font-size: 20px;}
+    .sns {display: none;}
+    .content1 .snsIcon {display: block;}
+    .content1 .snsIcon .snsIconBox {font-size: 30px; display: flex; justify-content: center;}
+    .content1 .snsIcon .snsIconBox a {display: block; margin-right: 50px;}
+    .content1 .snsIcon .snsIconBox a:last-child {margin-right: 0;}
 }

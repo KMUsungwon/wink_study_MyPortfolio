@@ -72,3 +72,10 @@ a {text-decoration: none; color: #333333;}
     .content {height: 200px; bottom: -200px;}
     .menu_bar h3 {font-size: 18px;}
 }
+@media (max-width: 480px) {
+    .about {font-size: 25px;}
+    .my_logo li {border-bottom: 3px solid #000000;}
+    .content {height: 150px; bottom: -150px;}
+    .content h2 {font-size: 20px;}
+    .content p {font-size: 14px;}
+}
