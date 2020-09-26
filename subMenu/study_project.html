@@ -4,8 +4,89 @@
     <meta charset="UTF-8">
     <title>STUDY AND PROJECT</title>
     <link rel="stylesheet" href="subMenu2.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script>
+        function clearText() {
+            document.getElementById('cities').value = "";
+        }
+        
+        function getWeather() {
+            $('.icons, .city, .temp').empty();
+            let cityName = document.getElementById('cities').value;
+            $(document).ready(function () {
+                $.ajax({
+                    url: 'http://api.openweathermap.org/data/2.5/weather?q='+cityName+'&appid=90148420274ab156a4b372cb991d351f',
+                    dataType: 'jsonp', // json 입력시 CORS Error
+                    type: 'GET',
+                    success: function(data) {
+                        var $Icon = (data.weather[0].main);
+                        var $Temp = Math.floor(data.main.temp - 273.15);
+                        var $city = data.name;
+
+                        $('.icons').append($Icon);
+                        $('.temp').append($Temp + '°C');
+                        $('.city').append($city);
+                    }
+                })
+            });
+        }
+
+        function startFunc() {
+            let banner = document.querySelector("#imageBox");
+            let count = 0;
+
+            let swift = document.querySelector(".swiftImg");
+            let swiftCount = 0;
+
+            function showBanner(num) {
+                for(let i=0; i<banner.children.length; i++) {
+                    if(i == num) {
+                        banner.children[i].style.visibility = 'visible';
+                        banner.children[i].style.opacity = 1;
+                    }
+                    else {
+                        banner.children[i].style.visibility = 'hidden';
+                        banner.children[i].style.opacity = 0;
+                    }
+                }
+            }
+
+            setInterval(function () {
+                if(count == banner.children.length) {
+                    count = 0;
+                }
+                showBanner(count);
+                count++;
+            },3000);
+
+            function showSwiftBanner(num) {
+                for(let i=0; i<swift.children.length; i++) {
+                    if(i == num) {
+                        swift.children[i].style.visibility = 'visible';
+                        swift.children[i].style.opacity = 1;
+                    }
+                    else {
+                        swift.children[i].style.visibility = 'hidden';
+                        swift.children[i].style.opacity = 0;
+                    }
+                }
+            }
+
+            setInterval(function () {
+                if(swiftCount == swift.children.length) {
+                    swiftCount = 0;
+                }
+                showSwiftBanner(swiftCount);
+                swiftCount++;
+            },2500);
+
+            let button = document.getElementById("buttons");
+
+        }
+    </script>
 </head>
-<body>
+<body onload="startFunc()">
     <div class="menu_bar">
         <a href="https://kmusungwon.github.io/wink_study_MyPortfolio/"><h3>HOME</h3></a>
         <a href="about.html"><h3>ABOUT</h3></a>
@@ -49,6 +130,23 @@
                     <div></div>
                 </div>
             </article>
+             <article>
+                 <h3>Weather API 사용하기</h3>
+                 <p>
+                     1. Open API 사용법 익히기<br>
+                     2. 도시를 입력하면 날씨 정보를 받오기<br>
+                     3. javascript fetch & json 이해하기
+                 </p>
+                 <div class="weatherAPI">
+                     <input type="text" value="Enter a name of city" id="cities" onfocus="clearText()">
+                     <input type="button" value="Click" onclick="getWeather()">
+                     <div id="weatherInfo">
+                         Weather : <span class="icons"></span><br>
+                         City : <span class="city"></span><br>
+                         Temperature : <span class="temp"></span>
+                     </div>
+                 </div>
+             </article>
 
         </section>
         <section class="project">
@@ -59,54 +157,5 @@
         </section>
     </div>
 
-    <script>
-        let banner = document.querySelector("#imageBox");
-        let count = 0;
-
-        let swift = document.querySelector(".swiftImg");
-        let swiftCount = 0;
-
-        function showBanner(num) {
-            for(let i=0; i<banner.children.length; i++) {
-                if(i == num) {
-                    banner.children[i].style.visibility = 'visible';
-                    banner.children[i].style.opacity = 1;
-                }
-                else {
-                    banner.children[i].style.visibility = 'hidden';
-                    banner.children[i].style.opacity = 0;
-                }
-            }
-        }
-
-        setInterval(function () {
-            if(count == banner.children.length) {
-                count = 0;
-            }
-            showBanner(count);
-            count++;
-        },3000);
-
-        function showSwiftBanner(num) {
-            for(let i=0; i<swift.children.length; i++) {
-                if(i == num) {
-                    swift.children[i].style.visibility = 'visible';
-                    swift.children[i].style.opacity = 1;
-                }
-                else {
-                    swift.children[i].style.visibility = 'hidden';
-                    swift.children[i].style.opacity = 0;
-                }
-            }
-        }
-
-        setInterval(function () {
-            if(swiftCount == swift.children.length) {
-                swiftCount = 0;
-            }
-            showSwiftBanner(swiftCount);
-            swiftCount++;
-        },2500);
-    </script>
 </body>
 </html>
