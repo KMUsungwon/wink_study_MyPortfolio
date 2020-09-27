@@ -30,3 +30,15 @@ a {text-decoration: none; color: #333333;}
 .wrap .head_content input:hover {background: lightgray; font-weight: bold;}
 
 .wrap .head_content .content {border: 1px solid #444444; height: 200px;}
+
+@media (max-width: 768px) {
+    .wrap header a{display: block; margin-right: 0; font-size: 30px;}
+    .wrap header a:hover {font-size: 35px;}
+    .head_content h1 {color: #333333;}
+}
+@media (max-width: 480px) {
+    .menu_bar a {display: block; margin-right: 0}
+    .menu_bar a:before {display: none;}
+    .menu_bar a h3 {transition: 0.3s;}
+    .menu_bar a h3:hover {color: lightgray; font-size: 22px;}
+}
