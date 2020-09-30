@@ -16,7 +16,7 @@
             let cityName = document.getElementById('cities').value;
             $(document).ready(function () {
                 $.ajax({
-                    url: 'http://api.openweathermap.org/data/2.5/weather?q='+cityName+'&appid=90148420274ab156a4b372cb991d351f',
+                    url: 'https://api.openweathermap.org/data/2.5/weather?q='+cityName+'&appid=90148420274ab156a4b372cb991d351f',
                     dataType: 'jsonp', // json 입력시 CORS Error
                     type: 'GET',
                     success: function(data) {
