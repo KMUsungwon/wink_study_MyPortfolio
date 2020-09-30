@@ -44,9 +44,9 @@ article p {font-size: 18px;}
     transition: 0.8s;
 }
 
-.swiftImg div:nth-child(1) {background: url("./assets/swift1.png") no-repeat center center; background-size: contain; opacity: 1;}
-.swiftImg div:nth-child(2) {background: url("./assets/swift2.png") no-repeat center center; background-size: contain;}
-.swiftImg div:nth-child(3) {background: url("./assets/swift3.png") no-repeat  center center; background-size: contain;}
+.swiftImg div:nth-child(1) {background: url("assets/img/swift1.png") no-repeat center center; background-size: contain; opacity: 1;}
+.swiftImg div:nth-child(2) {background: url("assets/img/swift2.png") no-repeat center center; background-size: contain;}
+.swiftImg div:nth-child(3) {background: url("assets/img/swift3.png") no-repeat  center center; background-size: contain;}
 
 .weatherAPI input {color: #333333; text-align: center; font-size: 20px;}
 #weatherInfo {margin-top: 20px; font-size: 20px; font-weight: bold; }

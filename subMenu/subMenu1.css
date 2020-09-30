@@ -10,9 +10,9 @@ a {text-decoration: none; color: #333333;}
     transition: 0.7s;
 }
 .my_logo li:last-child {border-right: none;}
-.my_logo li:nth-child(1) {background: url("assets/me1.jpeg")no-repeat center center;background-size: cover;}
-.my_logo li:nth-child(2) {background: url("assets/me2.jpeg") no-repeat center center; background-size: cover;}
-.my_logo li:nth-child(3) {background: url("assets/me3.jpeg"); background-size: cover;}
+.my_logo li:nth-child(1) {background: url("assets/img/me1.jpeg")no-repeat center center;background-size: cover;}
+.my_logo li:nth-child(2) {background: url("assets/img/me2.jpeg") no-repeat center center; background-size: cover;}
+.my_logo li:nth-child(3) {background: url("assets/img/me3.jpeg"); background-size: cover;}
 
 .about {
     font-size: 40px;

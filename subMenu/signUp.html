@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>signUp Page</title>
+    <link rel="stylesheet" href="assets/css/SignUpDesign.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+<div class="loginIn">
+    <div><h1>SignUp Page</h1></div>
+    <div class="loginBox">
+        <p>Have an Account ? | <span><a href="login.html">Sign In</a></span></p>
+        <div class="content">Register</div>
+        <div class="item">
+            <input type="text" placeholder="Your name" class="names">
+        </div>
+        <div class="item">
+            <input type="email" placeholder="Email" class="emails">
+        </div>
+        <div class="item">
+            <input type="password" placeholder="Password" class="userPW">
+        </div>
+        <div class="item">
+            <input type="password" placeholder="Password Check" class="userPWCheck">
+            <font id="chkNotice" size="2"></font>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        $('.userPW').keyup(function(){
+            $('#chkNotice').html('');
+        });
+
+        $('.userPWCheck').keyup(function(){
+
+            if($('.userPW').val() != $('.userPWCheck').val()){
+                $('#chkNotice').html('비밀번호 일치하지 않음<br><br>');
+                $('#chkNotice').attr('color', '#f82a2aa3');
+            } else{
+                $('#chkNotice').html('비밀번호 일치함<br><br>');
+                $('#chkNotice').attr('color', '#199894b3');
+            }
+        });
+    });
+</script>
+</body>
+</html>

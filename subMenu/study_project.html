@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>STUDY AND PROJECT</title>
-    <link rel="stylesheet" href="subMenu2.css">
+    <link   rel="stylesheet" href="subMenu2.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
     <script>
         function clearText() {
             document.getElementById('cities').value = "";
         }
-        
+
         function getWeather() {
             $('.icons, .city, .temp').empty();
             let cityName = document.getElementById('cities').value;
@@ -110,10 +110,10 @@
                     4. Android Studio를 이용한 Flutter Widget Design
                 </p>
                 <div id="imageBox">
-                    <div style="opacity:1;background-image: url('./assets/signin.png')"></div>
-                    <div style="background-image: url('./assets/signup.png')"></div>
-                    <div style="background-image: url('./assets/weather.png')"></div>
-                    <div style="background-image: url('./assets/firebase.png')"></div>
+                    <div style="opacity:1;background-image: url('assets/img/signin.png')"></div>
+                    <div style="background-image: url('assets/img/signup.png')"></div>
+                    <div style="background-image: url('assets/img/weather.png')"></div>
+                    <div style="background-image: url('assets/img/firebase.png')"></div>
                 </div>
             </article>
 
@@ -134,8 +134,9 @@
                  <h3>Weather API 사용하기</h3>
                  <p>
                      1. Open API 사용법 익히기<br>
-                     2. 도시를 입력하면 날씨 정보를 받오기<br>
-                     3. javascript fetch & json 이해하기
+                     2. 도시를 입력하면 날씨 정보를 받아오기<br>
+                     3. javascript fetch & json 이해하기<br>
+                     4. Jquery ajax의 이해 및 사용법 익히기
                  </p>
                  <div class="weatherAPI">
                      <input type="text" value="Enter a name of city" id="cities" onfocus="clearText()">

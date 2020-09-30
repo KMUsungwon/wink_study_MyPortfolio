@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    background: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+h1 {font-weight: bold; font-size: 40px;}
+a {text-decoration: none; color: dodgerblue;}
+p {color: #222222;}
+p span {font-weight: bold;}
+.content {
+    font-size: 30px;
+    margin-bottom: 15px;
+    position: absolute;
+    bottom: 20px;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background: #999999;
+    color: #ffffff;
+    border-radius: 7px;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.8);
+    cursor: pointer;
+    transition: 0.5s;
+}
+.content:hover {
+    transform: scale(1.1);
+}
+
+.loginIn .loginBox {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.item {
+    margin-bottom: 20px;
+    width: 300px;
+}
+
+.item input {
+    border: 1px solid lightgray;
+    height: 50px;
+    width: inherit;
+    border-radius: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.3s;
+}.item input:focus {
+     border: 1px solid dodgerblue;
+     box-shadow: 0 0 5px dodgerblue;
+ }
+
+/*hide placeholder*/
+.item input:focus::placeholder {
+    visibility: hidden;
+}
