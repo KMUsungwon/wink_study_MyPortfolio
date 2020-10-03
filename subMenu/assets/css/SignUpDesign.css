@@ -22,8 +22,8 @@ p span {font-weight: bold;}
     background: #999999;
     color: #ffffff;
     border-radius: 7px;
-    box-shadow: 0 0 5px 0 rgba(0,0,0,0.8);
     cursor: pointer;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.8);
     transition: 0.5s;
 }
 .content:hover {
@@ -65,3 +65,8 @@ p span {font-weight: bold;}
 .item input:focus::placeholder {
     visibility: hidden;
 }
+
+.menu_bar {margin-right: 30px;}
+.menu_bar a {color: #333333;}
+.menu_bar h3 {transition: 0.5s;}
+.menu_bar a:hover h3 {transform: scale(1.2);}

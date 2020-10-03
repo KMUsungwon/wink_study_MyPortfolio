@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <title>Login Page</title>
     <link rel="stylesheet" href="assets/css/LoginDesign.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/index.js"></script>
 </head>
 <body>
+<div class="menu_bar">
+    <a href="https://kmusungwon.github.io/wink_study_MyPortfolio/"><h3>HOME</h3></a>
+    <a href="about.html"><h3>ABOUT</h3></a>
+    <a href="study_project.html"><h3>STUDY&PROJECT</h3></a>
+    <a href="diary.html"><h3>DIARY</h3></a>
+</div>
 <div class="loginIn">
     <div><h1>Login Page</h1></div>
     <div class="loginBox">
         <p>Have not an Account ? | <span><a href="signUp.html">Sign Up</a></span></p>
-        <div class="content">Login</div>
+        <input class="content" type="button" value="Login" onclick="signIn()">
         <div class="item">
             <input type="text" placeholder="Your name" class="names">
         </div>
@@ -22,5 +30,27 @@
         </div>
     </div>
 </div>
+
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyDdHwS5QL7bT_NSOY5bvAVjC7rQdaNhqZg",
+        authDomain: "wink-portfolio-d62b7.firebaseapp.com",
+        databaseURL: "https://wink-portfolio-d62b7.firebaseio.com",
+        projectId: "wink-portfolio-d62b7",
+        storageBucket: "wink-portfolio-d62b7.appspot.com",
+        messagingSenderId: "151466527881",
+        appId: "1:151466527881:web:f2e2ab1381db7a5d3b4a58"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
+    const fs = firebase.firestore();
+</script>
+
 </body>
 </html>

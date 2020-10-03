@@ -65,3 +65,8 @@ p span {font-weight: bold;}
 .item input:focus::placeholder {
     visibility: hidden;
 }
+
+.menu_bar {margin-right: 30px;}
+.menu_bar a {color: #333333;}
+.menu_bar h3 {transition: 0.5s;}
+.menu_bar a:hover h3 {transform: scale(1.2);}
