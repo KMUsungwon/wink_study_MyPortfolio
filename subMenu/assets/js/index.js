@@ -39,16 +39,21 @@ function signIn() {
 
 /*로그아웃*/
 function logOut() {
-    let logout = confirm("로그아웃 하시겠습니까?");
-    if(logout) {
-        firebase.auth().signOut().then(function () {
-            alert("로그아웃 되었습니다.");
-            location.href = "diary.html";
-        });
+    let islogout = firebase.auth().currentUser;
+    if(!islogout) {
+        alert("로그아웃 상태입니다.");
     }
     else {
-        return;
+        let logout = confirm("로그아웃 하시겠습니까?");
+        if(logout) {
+            firebase.auth().signOut().then(function () {
+                alert("로그아웃 되었습니다.");
+                location.href = "diary.html";
+            });
+        }
+        else {return;}
     }
+
 }
 
 /*로그인 여부*/
