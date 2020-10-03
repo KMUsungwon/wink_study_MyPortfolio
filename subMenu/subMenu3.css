@@ -21,8 +21,10 @@ a {text-decoration: none; color: #333333;}
 
 .wrap header {text-align: center;}
 .wrap header a {font-size: 20px; margin-right: 20px; font-family: 'Indie Flower', cursive; transition: 0.5s;}
-.wrap header a:last-child {margin-right: 0;}
 .wrap header a:hover {font-size: 25px; color: dodgerblue;}
+
+.wrap header input {border: 0; outline: none; background: none; font-size: 20px; font-family: 'Indie Flower', cursive; transition: 0.5s; cursor: pointer; color: #333333;}
+.wrap header input:hover {font-size: 25px; color: dodgerblue;}
 
 .wrap .head_content {margin: 0 30px; position: relative;}
 .wrap .head_content h1 {font-size: 40px;}

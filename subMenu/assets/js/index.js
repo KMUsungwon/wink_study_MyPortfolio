@@ -1,3 +1,4 @@
+/*회원가입*/
 function signUp() {
     let id = $(".emails").val();
     let pw = $(".userPW").val();
@@ -20,7 +21,7 @@ function signUp() {
             });
     }
 }
-
+/*로그인 기능*/
 function signIn() {
     let emails = $(".emails").val();
     let password = $(".passwords").val();
@@ -34,4 +35,31 @@ function signIn() {
         var errorMessage = error.message;
         alert(error.code)
     });
+}
+
+/*로그아웃*/
+function logOut() {
+    let logout = confirm("로그아웃 하시겠습니까?");
+    if(logout) {
+        firebase.auth().signOut().then(function () {
+            alert("로그아웃 되었습니다.");
+            location.href = "diary.html";
+        });
+    }
+    else {
+        return;
+    }
+}
+
+/*로그인 여부*/
+function isLogin() {
+    var user = firebase.auth().currentUser;
+    if(!user) {
+        alert("로그인을 해주세요!");
+        let toSignIn = confirm("로그인 페이지로 이동하시겠습니까?");
+        if(toSignIn) {
+            location.href = "login.html";
+        }
+        else {return;}
+    }
 }

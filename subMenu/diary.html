@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>DIARY</title>
     <link rel="stylesheet" href="./subMenu3.css">
+    <script src="assets/js/index.js"></script>
 </head>
 <body>
     <div class="menu_bar">
@@ -16,16 +17,38 @@
         <header>
             <a href="login.html">SignIn</a>
             <a href="signUp.html">SignUp</a>
+            <input type="button" value="LogOut" onclick="logOut()">
         </header>
 
         <section class="head_content">
             <h1>Daily diary</h1>
-            <input type="button" value="게시물 작성">
+            <input type="button" value="게시물 작성" onclick="isLogin()">
             <div class="content">
 
             </div>
         </section>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDdHwS5QL7bT_NSOY5bvAVjC7rQdaNhqZg",
+            authDomain: "wink-portfolio-d62b7.firebaseapp.com",
+            databaseURL: "https://wink-portfolio-d62b7.firebaseio.com",
+            projectId: "wink-portfolio-d62b7",
+            storageBucket: "wink-portfolio-d62b7.appspot.com",
+            messagingSenderId: "151466527881",
+            appId: "1:151466527881:web:f2e2ab1381db7a5d3b4a58"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const fs = firebase.firestore();
+    </script>
 
 </body>
 </html>
