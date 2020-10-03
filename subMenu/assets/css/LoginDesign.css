@@ -17,14 +17,14 @@ p span {font-weight: bold;}
     bottom: 20px;
     width: 150px;
     height: 50px;
-    text-align: center;
-    line-height: 50px;
     background: #999999;
     color: #ffffff;
     border-radius: 7px;
-    box-shadow: 0 0 5px 0 rgba(0,0,0,0.8);
     cursor: pointer;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.8);
     transition: 0.5s;
+    border: none;
+    outline: none;
 }
 .content:hover {
     transform: scale(1.1);
