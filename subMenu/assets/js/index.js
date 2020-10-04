@@ -111,9 +111,9 @@ function getDiary() {
         for(let i=0; i<postData.length; i++) {
             const [key, values] = postData[i];
 
-            diaryContent.innerHTML += "<tr><td>"+values.subject+ "</td></tr>" +
-                "<tr><td>"+ +values.day+"</td></tr>" +
-                "<tr><td>" +values.content+ "</td></tr>"
+            diaryContent.innerHTML += "<tr><td>"+"<h2 class='subject_design'>"+values.subject+"</h2>"+"</td></tr>" +
+                "<tr class='sex'><td class='date_design'>"+ values.day+"</td></tr>" +
+                "<tr><td>"+"<p class='content_design'>"+values.content+"</p>"+"</td></tr>" + "<hr class='lines'>"
         }
     });
 }
