@@ -1,3 +1,18 @@
+/*Session Login function*/
+function sessionLogin() {
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+        .then(function() {
+            return signIn();
+        })
+        .catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+        });
+}
+
+
+
 /*signUp.html*/
 /*회원가입*/
 function signUp() {
