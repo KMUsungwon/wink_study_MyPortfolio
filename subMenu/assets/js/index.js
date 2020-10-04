@@ -27,7 +27,6 @@ function signUp() {
 function signIn() {
     let emails = $(".emails").val();
     let password = $(".passwords").val();
-
     firebase.auth().signInWithEmailAndPassword(emails, password).then(function () {
         alert("Login Success!");
         location.href = "diary.html";
@@ -58,9 +57,9 @@ function logOut() {
 
 }
 
-/*로그인 여부*/
+/*로그인 여부 및 diary 게시판 작성 권한 기능 구현*/
 function isLogin() {
-    var user = firebase.auth().currentUser;
+    let user = firebase.auth().currentUser;
     if(!user) {
         alert("로그인을 해주세요!");
         let toSignIn = confirm("로그인 페이지로 이동하시겠습니까?");
@@ -70,9 +69,16 @@ function isLogin() {
         else {return;}
     }
     else {
-        let storyBoard = confirm("게시물을 작성하시겠습니까?");
-        if(storyBoard) {location.href = "./assets/html/boardForm.html";}
-        else {return;}
+        let email = user.email;
+        if(email != "sungwontoto@kookmin.ac.kr") {
+            alert("작성 권한이 없습니다!");
+            return;
+        }
+        else {
+            let storyBoard = confirm("게시물을 작성하시겠습니까?");
+            if(storyBoard) {location.href = "./assets/html/boardForm.html";}
+            else {return;}
+        }
     }
 }
 
@@ -118,4 +124,5 @@ function getDiary() {
     });
 }
 
+/*email pass function*/
 
