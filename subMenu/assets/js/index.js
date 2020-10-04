@@ -1,3 +1,4 @@
+/*signUp.html*/
 /*회원가입*/
 function signUp() {
     let id = $(".emails").val();
@@ -21,6 +22,7 @@ function signUp() {
             });
     }
 }
+/*login.html*/
 /*로그인 기능*/
 function signIn() {
     let emails = $(".emails").val();
@@ -36,7 +38,7 @@ function signIn() {
         alert(error.code)
     });
 }
-
+/*diary.html*/
 /*로그아웃*/
 function logOut() {
     let islogout = firebase.auth().currentUser;
@@ -67,4 +69,53 @@ function isLogin() {
         }
         else {return;}
     }
+    else {
+        let storyBoard = confirm("게시물을 작성하시겠습니까?");
+        if(storyBoard) {location.href = "./assets/html/boardForm.html";}
+        else {return;}
+    }
 }
+
+/*boardForm.html*/
+
+/*Back to the diary.html*/
+function goDiary() {location.href = "../../diary.html";}
+
+/*boardForm.html write board codes*/
+
+function start() {
+    let subjects = $('#subject').val();
+    let days = $('#day').val();
+    let contents = $('#content').val();
+    writeBoard(days, subjects, contents);
+    alert("게시글 작성이 완료되었습니다.");
+    document.getElementById("subject").value = "";
+    document.getElementById("day").value = "";
+    document.getElementById("content").value = "";
+}
+function writeBoard(day, subject, content) {
+    const postData = {
+        day,
+        subject,
+        content,
+    }
+
+    //Get a key for a new Post.
+    const newPostKey = firebase.database().ref().child('posts').push(postData);
+}
+
+function getDiary() {
+    const postRef = firebase.database().ref('/posts/').once('value', function (snapshot) {
+        const postData = Object.entries(snapshot.val());
+        let diaryContent = document.querySelector(".diary_content");
+        for(let i=0; i<postData.length; i++) {
+            const [key, values] = postData[i];
+
+            diaryContent.innerHTML += "<tr><td>"+values.subject+ "</td></tr>" +
+                "<tr><td>"+ +values.day+"</td></tr>" +
+                "<tr><td>" +values.content+ "</td></tr>"
+        }
+    });
+}
+
+

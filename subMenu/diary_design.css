@@ -31,7 +31,6 @@ a {text-decoration: none; color: #333333;}
 .wrap .head_content input {position: absolute; left: 160px; top: 20px; background: none; cursor: pointer; transition: 0.4s; border-radius: 3px;}
 .wrap .head_content input:hover {background: lightgray; font-weight: bold;}
 
-.wrap .head_content .content {border: 1px solid #444444; height: 200px;}
 
 @media (max-width: 768px) {
     .wrap header a{display: block; margin-right: 0; font-size: 30px;}

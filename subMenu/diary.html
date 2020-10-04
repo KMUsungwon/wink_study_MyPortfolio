@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>DIARY</title>
-    <link rel="stylesheet" href="./subMenu3.css">
+    <link rel="stylesheet" href="diary_design.css">
     <script src="assets/js/index.js"></script>
 </head>
 <body>
@@ -24,7 +24,9 @@
             <h1>Daily diary</h1>
             <input type="button" value="게시물 작성" onclick="isLogin()">
             <div class="content">
+                <tobdy class="diary_content">
 
+                </tobdy>
             </div>
         </section>
     </div>
@@ -32,6 +34,7 @@
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
 
     <script>
         const firebaseConfig = {
@@ -45,9 +48,9 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
+        let database = firebase.database();
 
-        const auth = firebase.auth();
-        const fs = firebase.firestore();
+        getDiary();
     </script>
 
 </body>
