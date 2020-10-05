@@ -42,14 +42,16 @@ function signUp() {
 function signIn() {
     let emails = $(".emails").val();
     let password = $(".passwords").val();
+
     firebase.auth().signInWithEmailAndPassword(emails, password).then(function () {
+
         alert("Login Success!");
         location.href = "diary.html";
     })
     .catch(function (error) {
         var errorCode = error.code;
-        var errorMessage = error.message;
-        alert(error.code)
+        var errorMessage = "비밀번호가 일치하지 않습니다.";
+        alert(errorMessage);
     });
 }
 /*diary.html*/
@@ -103,7 +105,6 @@ function isLogin() {
 function goDiary() {location.href = "../../diary.html";}
 
 /*boardForm.html write board codes*/
-
 function start() {
     let subjects = $('#subject').val();
     let days = $('#day').val();
@@ -127,7 +128,7 @@ function writeBoard(day, subject, content) {
 
 function getDiary() {
     const postRef = firebase.database().ref('/posts/').once('value', function (snapshot) {
-        const postData = Object.entries(snapshot.val());
+        const postData = Object.entries(snapshot.val()); /*dic to array*/
         let diaryContent = document.querySelector(".diary_content");
         for(let i=0; i<postData.length; i++) {
             const [key, values] = postData[i];
@@ -139,5 +140,25 @@ function getDiary() {
     });
 }
 
-/*email pass function*/
-
+/*로그인 여부 확인 후 로그인하는 함수*/
+function loginInfo() {
+    let user = firebase.auth().currentUser;
+    if(user) {
+        alert("로그인 상태입니다.");
+        return;
+    }
+    else {
+        location.href ="login.html";
+    }
+}
+/*로그인 여부 확인 후 회원가입 함수*/
+function signUpInfo() {
+    let user = firebase.auth().currentUser;
+    if(user) {
+        alert("로그인 상태에서는 회원가입을 할 수 없습니다.");
+        return;
+    }
+    else {
+        location.href ="signUp.html";
+    }
+}

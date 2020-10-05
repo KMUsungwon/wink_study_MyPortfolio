@@ -44,10 +44,7 @@ a {text-decoration: none; color: #333333;}
     .menu_bar a h3:hover {color: lightgray; font-size: 22px;}
 }
 
-.subject_design {
-    font-size: 25px;
-    margin-bottom: 0;
-}
+.subject_design {font-size: 25px; margin-bottom: 0;}
 .date_design {font-size: 18px; font-weight: bold;}
 .content_design {font-size: 28px; margin: 10px 0 0 0;}
 .lines {border: 1px solid #eeeeee; width: 100%;}
