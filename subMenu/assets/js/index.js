@@ -88,7 +88,7 @@ function isLogin() {
     else {
         let email = user.email;
         if(email != "sungwontoto@kookmin.ac.kr") {
-            alert("작성 권한이 없습니다!");
+            alert("작성 권한이 없습니다.");
             return;
         }
         else {
@@ -97,6 +97,60 @@ function isLogin() {
             else {return;}
         }
     }
+}
+
+/*삭제 시 로그인 여부 및 삭제 권한 기능 함수*/
+function isDelete() {
+    let user = firebase.auth().currentUser;
+    let userEmail = user.email;
+
+    if(!user) {
+        alert("로그인을 해주세요!");
+        let toSignIn = confirm("로그인 페이지로 이동하시겠습니까?");
+        if(toSignIn) {
+            location.href = "login.html";
+        }
+        else {return;}
+    }
+    else {
+        if(userEmail != "sungwontoto@kookmin.ac.kr") {
+            alert("삭제 권한이 없습니다.");
+            return;
+        }
+        else {
+            deleteDiary();
+        }
+    }
+}
+/*diary delete function*/
+function deleteDiary() {
+    let sub = prompt("삭제할 게시물의 제목을 입력해 주세요.");
+    let db = firebase.database();
+    let ref = db.ref('posts');
+
+    ref.once('value', function (snapshot) {
+        let userData = snapshot.val();
+        let key = Object.keys(userData);
+
+        for(var i=0; i<key.length; i++) {
+            var k = key[i];
+            var id = userData[k].subject; /*제목*/
+            if(sub == id) {
+
+                let delKey = ref.child(k);
+                delKey.remove();
+                alert("게시물이 삭제되었습니다.");
+                break;
+            }
+            else if(sub == null) {return;} /*취소 눌렀을 때*/
+            else {
+                alert("일치하는 제목이 없습니다.");
+                return;
+            }
+        }
+        location.href = "diary.html";
+    });
+
 }
 
 /*boardForm.html*/
