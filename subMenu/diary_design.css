@@ -27,10 +27,16 @@ a {text-decoration: none; color: #333333;}
 .wrap header input:hover {font-size: 25px; color: dodgerblue;}
 
 .wrap .head_content {margin: 0 20px; position: relative;}
-.wrap .head_content h1 {font-size: 40px;}
-.wrap .head_content input {position: absolute; left: 160px; top: 20px; background: none; cursor: pointer; transition: 0.4s; border-radius: 3px;}
-.wrap .head_content input:nth-child(2) {left: 240px;}
+.wrap .head_content h1 {font-size: 40px; text-align: center;}
+.wrap .head_content input {position: absolute; right: 0; top: -100%; background: none; cursor: pointer; transition: 0.4s; border-radius: 3px;}
+.wrap .head_content input:nth-child(2) {right: 6%;}
 .wrap .head_content input:hover {background: lightgray; font-weight: bold;}
+
+.table_content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 
 @media (max-width: 768px) {
