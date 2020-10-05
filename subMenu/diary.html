@@ -17,13 +17,14 @@
         <header>
             <a href="#" onclick="loginInfo()">SignIn</a>
             <a href="#" onclick="signUpInfo()">SignUp</a>
-            <input type="button" value="LogOut" onclick="logOut()">
+            <div><input type="button" value="LogOut" onclick="logOut()"></div>
+            <div><input type="button" value="Write Diary" onclick="isLogin()"></div>
+            <div><input type="button" value="Delete Diary" onclick="isDelete()"></div>
         </header>
 
         <section class="head_content">
             <h1>Daily diary</h1>
-            <input type="button" value="게시물 작성" onclick="isLogin()">
-            <input type="button" value="게시글 삭제" onclick="isDelete()">
+
             <div class="table_content">
                 <table>
                     <tbody class="diary_content">
