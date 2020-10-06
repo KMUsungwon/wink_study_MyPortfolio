@@ -128,27 +128,31 @@ function deleteDiary() {
     let db = firebase.database();
     let ref = db.ref('posts');
 
+    let detect = false;
     ref.once('value', function (snapshot) {
         let userData = snapshot.val();
         let key = Object.keys(userData);
 
-        for(var i=0; i<key.length; i++) {
-            var k = key[i];
-            var id = userData[k].subject; /*제목*/
-            if(sub == id) {
-
-                let delKey = ref.child(k);
-                delKey.remove();
-                alert("게시물이 삭제되었습니다.");
-                break;
-            }
-            else if(sub == null) {return;} /*취소 눌렀을 때*/
-            else {
-                alert("일치하는 제목이 없습니다.");
-                return;
+        if(sub != null) {
+            for(var i=0; i<key.length; i++) {
+                var k = key[i];
+                var id = userData[k].subject; /*제목*/
+                if(sub == id) {
+                    let delKey = ref.child(k);
+                    delKey.remove();
+                    detect = true;
+                    alert("게시물이 삭제되었습니다.");
+                    location.href = "diary.html";
+                }
             }
         }
-        location.href = "diary.html";
+        else {
+            return;
+        }
+        if(detect == false) {
+            alert("일치하는 제목이 없습니다.");
+            return;
+        }
     });
 
 }
