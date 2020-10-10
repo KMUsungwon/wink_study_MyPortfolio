@@ -167,11 +167,29 @@ function start() {
     let subjects = $('#subject').val();
     let days = $('#day').val();
     let contents = $('#content').val();
-    writeBoard(days, subjects, contents);
-    alert("게시글 작성이 완료되었습니다.");
-    document.getElementById("subject").value = "";
-    document.getElementById("day").value = "";
-    document.getElementById("content").value = "";
+
+
+    let exist = false;
+    firebase.database().ref('posts').once('value', function (snapshot) {
+        let postData = snapshot.val();
+        let key = Object.keys(postData);
+        for(var i=0; i<key.length; i++) {
+            var k = key[i];
+            var id = postData[k].subject;
+            if(subjects === id) {
+                exist = true;
+            }
+        }
+
+        if(exist) {
+            alert("같은 이름의 제목이 존재합니다.");
+            document.getElementById("subject").value = "";
+            return;
+        }
+        else {writeBoard(days, subjects, contents);}
+    });
+
+
 }
 function writeBoard(day, subject, content) {
     const postData = {
@@ -182,6 +200,10 @@ function writeBoard(day, subject, content) {
 
     //Get a key for a new Post.
     const newPostKey = firebase.database().ref().child('posts').push(postData);
+    alert("게시글 작성이 완료되었습니다.");
+    document.getElementById("subject").value = "";
+    document.getElementById("day").value = "";
+    document.getElementById("content").value = "";
 }
 
 function getDiary() {
