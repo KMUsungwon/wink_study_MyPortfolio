@@ -70,3 +70,51 @@ p span {font-weight: bold;}
 .menu_bar a {color: #333333;}
 .menu_bar h3 {transition: 0.5s;}
 .menu_bar a:hover h3 {transform: scale(1.2);}
+
+@media (max-width: 768px) {
+    .loginIn .loginBox {width: 400px; height: 350px;}
+    .loginIn .loginBox p {font-size: 14px;}
+    .item { width: 200px;}
+    .item input {font-size: 12px;}
+    .content {
+        font-size: 14px;
+        top: -22%;
+        width: 100px;
+        right: 0;
+        background: none;
+        border: 2px solid #ffffff;
+        box-shadow: none;
+        color: #000000;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .menu_bar {position: absolute; top: 10%; left: 50%; transform: translateX(-50%);}
+    .menu_bar a{
+        display: inline-block;
+        margin-right: 8px;
+        font-size: 15px;
+    }
+    .menu_bar a:last-child {margin-right: 0;}
+    .menu_bar a:hover h3 {transform: scale(1.1); color: dodgerblue;}
+}
+
+@media (max-width: 480px) {
+    .menu_bar {top: 10%;}
+    .menu_bar a {font-size: 12px; display: inline-block; margin-right: 10px;}
+    .menu_bar a:last-child {margin-right: 0;}
+    .menu_bar a:hover h3 {transform: none;}
+    .loginIn h1 {font-size: 25px;}
+    .content {
+        font-size: 12px;
+        top: -15%;
+        width: 80px;
+        height: 40px;
+        right: 0;
+        background: none;
+        border: 2px solid #ffffff;
+        box-shadow: none;
+        color: #000000;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
