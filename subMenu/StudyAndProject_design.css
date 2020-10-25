@@ -3,6 +3,7 @@ body {margin: 0; background: #F6E3CE; font-family: 'PT Sans Narrow', sans-serif;
 a{text-decoration: none;}
 ul {list-style: none;}
 h1 {font-size: 40px;}
+h4 {font-size: 25px;}
 .wrap{width: 100%; text-align: center;}
 
 .menu_bar{width:100%;background: #333333;padding: 5px; text-align: center; margin: 0 0 30px 0;}
@@ -54,6 +55,16 @@ article p {font-size: 18px;}
     font-size: 30px;
     font-weight: bolder;
     color: #222222;
+}
+
+.kotlin_study a{
+    display: block;
+    text-decoration: none;
+    color: crimson;
+    transition: 0.3s;
+}
+.kotlin_study a:hover {
+    font-weight: bold;
 }
 
 
